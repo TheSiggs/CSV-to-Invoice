@@ -5,7 +5,16 @@ function read(input) {
 	reader.readAsText(csv)
 }
 
+function changeDOM(domElement, innerHTML) {
+	document.getElementById(domElement).innerHTML = innerHTML
+}
+
+function addRow(list) {
+
+}
+
 reader.onload = function (e) {
+	// Grabs all information from csv file
 	var content = e.target.result;
 	// document.querySelector('.output').innerText = content;
 	console.log(content);
@@ -36,20 +45,25 @@ reader.onload = function (e) {
 	}
 	console.log(TimesheetCells);
 
-	var timesheetjson = "";
+	// Manpulates inner html of all DOM objects 
+	changeDOM("CompanyTitle", "Sam Siggs");
+	changeDOM("InvoiceTitle", "Tax Invoice # " + InvoiceNo);
+	changeDOM("InvoiceDate", "Date: Dec 12, 2020");
+	changeDOM("BillTo", "Bill To: OnionCRM");
+	changeDOM("BalanceDue", "Balance Due: $"+parseFloat(TotalCost).toFixed(2));
 
-	TimesheetCells.forEach(function(e) {
-		timesheetjson += '['+e+'],';
-	});
+	var table = document.getElementById("InvoiceItems");
+	var header = table.createTHead();
+	var row = header.insertRow(0);
+	row.insertCell(0).innerHTML = "<b>Item</b>";
+	row.insertCell(1).innerHTML = "<b>Quantity</b>";
+	row.insertCell(2).innerHTML = "<b>Rate</b>";
+	row.insertCell(2).innerHTML = "<b>Amount</b>";
 
-	// console.log(timesheetjson);
-	
-	var json = '{ "InvoiceNo":' + InvoiceNo  + ','+
-				' "HourlyRate":' + HourlyRate + ','+
-				' "Recipent":' + Recipent + ',' +
-				' "From":' + From + ','+
-				' "Timesheets": [' + timesheetjson + '],'+
-				' "TotalCost":' + TotalCost + ']}';
-	console.log(json);
-	console.log(JSON.parse(json)); 
+
+	// addRow(table, TimesheetCells[0]);
+	var list = TimesheetCells[0];
+	row = table.insertRow(1);
+	list = list.reverse();
+	list.forEach(e => row.insertCell(0).innerHTML = e);
 }

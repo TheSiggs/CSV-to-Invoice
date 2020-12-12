@@ -3,10 +3,37 @@
 <head>
 	<title>Excel to Invoice Converter</title>
 	<script type="text/javascript" src="main.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<p>Input CSV file</p>
 	<input type="file" onchange=read(this)>
-	<div class="output"></div>
-	</body>
+	<br><br><br>
+	<div class="output">
+		<div class="invoice">
+
+			<div id="CompanyTitle"></div>
+
+			<div id="InvoiceTitle"></div>
+
+			<div id="InvoiceDate"></div>
+
+			<div id="BillTo"></div>
+
+			<div id="BalanceDue"></div>
+
+			<div>
+				<table id="InvoiceItems">
+
+				</table>
+			</div>
+
+
+
+
+
+
+		</div>
+	</div>
+
 </html>
