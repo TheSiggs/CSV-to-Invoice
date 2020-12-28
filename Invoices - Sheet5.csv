@@ -1,0 +1,11 @@
+Invoice #:,1,,,
+Recpient:,Test Company,,,
+From:,Siggs Co,,,
+Date ,Project Name,Description,Total Hours,Hourly Rate
+05-18-2020,Admin Project,Stock on Hand Report,2.5,45
+05-19-2020,Admin Project,Stock on Hand Report,4.87,45
+05-21-2020,General Support,Peer Review,1,45
+05-25-2020,General Support,Custom Function to Create Estimate from Project,0.5,45
+05-26-2020,General Support,Custom Function to Create Estimate from Project,1.5,45
+05-27-2020,Admin Project,Stock on Hand Report,3.67,45
+05-28-2020,General Support,Custom Function to Create Estimate from Project,1.67,45
